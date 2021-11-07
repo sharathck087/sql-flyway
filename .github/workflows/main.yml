@@ -1,0 +1,29 @@
+name: Main
+on:
+  
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: Branch name
+        required: true
+        default: master
+      deploy_message:
+        description: Deploy Description
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - uses:  sharathck087/flyway-custom-action@v1.0.0
+
+        with:
+          url: ${{secrets.URL}}
+          user: ${{secrets.USERNAME}}
+          
+          password: ${{secrets.PASSWORD}}
+          locations: filesystem:./sql
+          
+          
+          
+          
