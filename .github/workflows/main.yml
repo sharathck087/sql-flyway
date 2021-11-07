@@ -15,7 +15,7 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
-      - uses:  sharathck087/flyway-custom-action@v1.0.0
+      - uses:  rahulmalewadi/flyway-custom-action@v1.0.0
 
         with:
           url: ${{secrets.URL}}
